@@ -6,7 +6,13 @@ from lib.database_connection import get_flask_database_connection
 app = Flask(__name__)
 
 # == Your Routes Here ==
+@app.route('/hello')
+def get_hello():
+    return render_template("hello.html", message= "Hello, world!")
 
+@app.route('/bye')
+def get_goodbye():
+    return render_template("hello.html", message_bye= "Bye!")
 
 # == Example Code Below ==
 
